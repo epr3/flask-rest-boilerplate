@@ -1,0 +1,7 @@
+.env
+Pipfile
+Pipfile.lock
+*.sqlite
+*.log
+.vscode
+__pycache__
