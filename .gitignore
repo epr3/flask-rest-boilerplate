@@ -5,3 +5,5 @@ Pipfile.lock
 *.log
 .vscode
 __pycache__
+.idea
+venv

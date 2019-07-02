@@ -1,5 +1,2 @@
-from flask_sqlalchemy import SQLAlchemy
+from .faculty import Faculty
 
-db = SQLAlchemy()
-
-from .faculty import Faculty, FacultySchema

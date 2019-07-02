@@ -1,12 +1,12 @@
 import click
-from flask import Flask, jsonify
+from flask import Flask
 from flask_migrate import Migrate
 from flask.blueprints import Blueprint
 from flask_jwt_extended import JWTManager
 
 from . import config
 from . import routes
-from src.models import db
+from src.util import db
 
 # config your API specs
 # you can define multiple specs in the case your api has multiple versions
@@ -28,9 +28,11 @@ migrate = Migrate(app, db)
 
 jwt = JWTManager(app)
 
+
 @jwt.unauthorized_loader
-def unauthorized_callback(reason):
+def unauthorized_callback():
     return 'Unauthorized', 401
+
 
 for blueprint in vars(routes).values():
     if isinstance(blueprint, Blueprint):
@@ -47,6 +49,7 @@ def healthz():
 @app.cli.command()
 def test_command():
     click.echo('Test')
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=3000, debug=True)
