@@ -21,7 +21,7 @@ marshmallow==3.0.0rc4
 marshmallow-sqlalchemy==0.16.0
 more-itertools==6.0.0
 pluggy==0.8.1
-py==1.7.0
+py==1.10.0
 pycodestyle==2.5.0
 PyJWT==1.7.1
 pyrsistent==0.14.11
